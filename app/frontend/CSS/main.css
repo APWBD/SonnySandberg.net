@@ -1,0 +1,144 @@
+:root
+{
+   --gryffindor-color: #f9272e;
+   --ravenclaw-color: #6c8bd1;
+   --hufflepuff-color: #f7f16b;
+   --slytherin-color: #1ca86c;
+   --wampus-color: #7030A0;
+   --added-color: green;
+   --subtracted-color: red;
+   --gold-color: gold;
+   --red-color: red;
+   --red-brown-color: #8A3324;
+   --red-brown-hover-color: #A35A29;
+   --orange-color: #CD7F32;
+   --headline-color: burlywood;
+   --subheadline-color: var(--red-brown-hover-color);
+   --broken-white: #FFC;
+   --dark-gray-color: #666;
+   --darker-gray-color: #333;
+   --border-color: var(--dark-gray-color);
+   --white-alpha-50: rgba(255, 255, 255, 0.5);
+   --white-alpha-40: rgba(255, 255, 255, 0.4);
+   --white-alpha-30: rgba(255, 255, 255, 0.3);
+   --white-alpha-20: rgba(255, 255, 255, 0.2);
+   --white-alpha-10: rgba(255, 255, 255, 0.1);
+   --red-alpha-10: rgba(255, 0, 0, 0.1);
+   --red-alpha-20: rgba(255, 0, 0, 0.2);
+   --red-alpha-30: rgba(255, 0, 0, 0.3);
+   --red-alpha-40: rgba(255, 0, 0, 0.4);
+   --red-alpha-50: rgba(255, 0, 0, 0.5);
+   --green-alpha-10: rgba(0, 255, 0, 0.1);
+   --green-alpha-20: rgba(0, 255, 0, 0.2);
+   --green-alpha-30: rgba(0, 255, 0, 0.3);
+   --green-alpha-40: rgba(0, 255, 0, 0.4);
+   --green-alpha-50: rgba(0, 255, 0, 0.5);
+   --green-alpha-60: rgba(0, 255, 0, 0.6);
+   --green-alpha-70: rgba(0, 255, 0, 0.7);
+   --green-alpha-80: rgba(0, 255, 0, 0.8);
+   --green-alpha-90: rgba(0, 255, 0, 0.9);
+   --green-alpha-100: rgba(0, 255, 0, 1);
+   --orange-alpha-10: rgba(255, 165, 0, 0.1);
+   --orange-alpha-20: rgba(255, 165, 0, 0.2);
+   --orange-alpha-30: rgba(255, 165, 0, 0.3);
+   --orange-alpha-40: rgba(255, 165, 0, 0.4);
+   --orange-alpha-50: rgba(255, 165, 0, 0.5);
+   --orange-alpha-60: rgba(255, 165, 0, 0.6);
+   --orange-alpha-70: rgba(255, 165, 0, 0.7);
+   --orange-alpha-80: rgba(255, 165, 0, 0.8);
+   --orange-alpha-90: rgba(255, 165, 0, 0.9);
+   --orange-alpha-100: rgba(255, 165, 0, 1);
+
+   /* Color scheme Italian Countryside from https://daveyandkrista.com/trending-color-palettes-for-websites/ */
+   --color-primary-maroon: #6B0C04;
+   --color-primary-dull-gold: #AA7B4F;
+   --color-neutral-dustyrose: #CABFAC;
+   --color-neutral-lightgray: #E7E6E3;
+   --color-background-light: #F5F5F5;
+   --color-accent-gold: gold;
+   --color-accent-indigo: #3A3F5F;
+   --color-accent-indigo-95: rgba(58, 63, 95, 0.95);
+   --color-text: #33312E;
+   --color-text-light: #F5F5F5;
+
+   --color-being-edited: rgba(255, 255, 0, 0.1);
+   --color-awaiting: rgba(255, 0, 0, 0.1);
+   --color-ready: rgba(0, 128, 0, 0.1);
+   --color-published: rgba(0, 0, 255, 0.1);
+
+   --headline-size: 30px;
+   --subheadline-size: 22px;
+   --list-text-size: 17px;
+   --button-text-size: 22px;
+   --input-text-size: 20px;
+   --label-text-size: 20px;
+   --grid-row-height: 40px;
+
+   --fieldset-border: var(--border-color);
+}
+
+button:hover
+{
+   cursor: pointer;
+}
+
+input,
+select,
+textarea
+{
+   font-size: var(--input-text-size);
+   padding: 5px;
+   border: 1px solid var(--border-color);
+}
+
+label
+{
+   font-size: var(--label-text-size);
+   line-height: var(--grid-row-height);
+}
+
+*
+{
+   padding: 0;
+   margin: 0;
+   font-family: "Roboto", "Arial", sans-serif;
+   font-weight: normal;
+   outline: none;
+}
+
+html
+{
+   height: 100vh;
+   background-color: #FCF8F2;
+}
+
+@media (min-width: 1400px)
+{
+   html
+   {
+      background-image:
+         url("/app/frontend/images/cover.png");
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+   }
+}
+
+body
+{
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 60px min-content 1fr;
+   grid-template-areas: "topBar"
+      "searchResults"
+      "main";
+   height: 100%;
+}
+
+.main
+{
+   grid-area: main;
+   display: grid;
+   grid-template-columns: min-content 1fr;
+}
