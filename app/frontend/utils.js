@@ -113,3 +113,12 @@ export function inArray(obj, arr)
       resolve(toReturn);
    });
 }
+
+/**
+ * This function finds a random number between zero and the number provided + 1
+ * @param {int} max
+ */
+function getRandomInt(min, max)
+{
+   return Math.round(Math.random() * (max - min) + min);
+}
