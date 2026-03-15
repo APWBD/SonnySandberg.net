@@ -1,9 +1,15 @@
 {
   "devDependencies": {
-    "browser-sync": "^3.0.4"
+    "@eslint/css": "^1.0.0",
+    "@eslint/js": "^10.0.1",
+    "@eslint/json": "^1.1.0",
+    "@eslint/markdown": "^7.5.1",
+    "browser-sync": "^3.0.4",
+    "eslint": "^10.0.3",
+    "globals": "^17.4.0"
   },
   "name": "sonnysandberg.net",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "dependencies": {

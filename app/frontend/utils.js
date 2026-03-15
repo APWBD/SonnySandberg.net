@@ -1,6 +1,6 @@
 import { config } from './config.js';
 
-var w = window,
+let w = window,
    d = document,
    e = d.documentElement,
    g = d.getElementsByTagName('body')[0],
@@ -118,7 +118,7 @@ export function inArray(obj, arr)
  * This function finds a random number between zero and the number provided + 1
  * @param {int} max
  */
-function getRandomInt(min, max)
+export function getRandomInt(min, max)
 {
    return Math.round(Math.random() * (max - min) + min);
 }
