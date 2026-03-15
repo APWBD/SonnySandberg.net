@@ -1,0 +1,79 @@
+/* Buttons */
+.std-button
+{
+   background-color: black;
+   color: white;
+   border-radius: 0px;
+   font-size: 18px;
+   padding: 10px;
+   text-decoration: none;
+   display: inline-block;
+   text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+   font-weight: bold;
+   cursor: pointer;
+}
+
+.std-button-blue
+{
+    border:1px solid #25729a;
+    color: #FFFFFF;
+    background-image: linear-gradient(to bottom, #3093c7, #1c5a85);
+}
+
+.std-button-blue:hover
+{
+    border:1px solid #1c5675;
+    background-image: linear-gradient(to bottom, #26759e, #133d5b);
+}
+
+.std-button-orange
+{
+    border:1px solid #cb9b14;
+    color: #FFFFFF;
+    background-image: linear-gradient(to bottom, #eab92d, #c79810);
+}
+
+.std-button-orange:hover
+{
+    border:1px solid #a17b10;
+    background-image: linear-gradient(to bottom, #cf9f15, #98740c);
+}
+
+.std-button-white
+{
+    border:1px solid #d1dcdf;
+    color: #133d5b;
+    background-image: linear-gradient(to bottom, #f2f5f6, #c8d7dc);
+}
+
+.std-button-white:hover
+{
+    border:1px solid #b6c7cc;
+    background-image: linear-gradient(to bottom, #d4dee1, #a9c0c8);
+}
+
+.std-button-red
+{
+    border: 1px solid #72021c;
+    color: #FFFFFF;
+    background-image: linear-gradient(to bottom, #a90329, #6d0019);
+}
+
+.std-button-red:hover
+{
+    border: 1px solid #450111;
+    background-image: linear-gradient(to bottom, #77021d, #3a000d);
+}
+
+.std-button-green
+{
+    border: 1px solid #34740e;
+    color: #FFFFFF;
+    background-image: linear-gradient(to bottom, #4ba614, #008c00);
+}
+
+.std-button-green:hover
+{
+    border: 1px solid #224b09;
+    background-image: linear-gradient(to bottom, #36780f, #005900);
+}

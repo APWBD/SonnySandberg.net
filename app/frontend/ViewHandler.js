@@ -2,11 +2,13 @@ import { getUrlParts } from "/app/frontend/utils.js";
 import { config } from "/app/frontend/config.js";
 import { importCSS } from "/app/frontend/utils.js";
 
+import FractionView from "/app/frontend/view/fraction/FractionView.js";
+
 export default class ViewHandler
 {
    init()
    {
-    const d  = document;
+      const d  = document;
 
       importCSS("main");
 
@@ -20,6 +22,10 @@ export default class ViewHandler
       const url = getUrlParts();
       window.document.title = `${config.getTitle()}`;
 
-      const d = document;
+      if (url[0] === "Fraction")
+      {
+         const fraction = new FractionView(container);
+         fraction.build();
+      }
    }
 }
