@@ -3,12 +3,13 @@ import { config } from "/app/frontend/config.js";
 import { importCSS } from "/app/frontend/utils.js";
 
 import FractionView from "/app/frontend/view/fraction/FractionView.js";
+import EquationView from "/app/frontend/view/equation/EquationView.js";
 
 export default class ViewHandler
 {
    init()
    {
-      const d  = document;
+      const d = document;
 
       importCSS("main");
 
@@ -26,6 +27,12 @@ export default class ViewHandler
       {
          const fraction = new FractionView(container);
          fraction.build();
+      }
+
+      if (url[0] === "Equation")
+      {
+         const equation = new EquationView(container);
+         equation.build();
       }
    }
 }

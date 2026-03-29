@@ -1,0 +1,82 @@
+:root {
+    font-size: 20px;
+}
+
+* {
+    font-family: "Bookman Old Style", "Verdana";
+}
+
+.grid {
+    height: calc(100vh - 50px);
+    width: calc(100vw - 60px);
+    display: grid;
+    grid-template-rows: 1fr 100px 70px 150px 100px 1fr;
+    grid-template-columns: 1fr 600px 1fr;
+    grid-template-areas: ". . ."
+        ". headline ."
+        ". level ."
+        ". problem ."
+        ". buttons ."
+        ". . .";
+}
+
+.headline {
+    grid-area: headline;
+    height: 100px;
+    line-height: 100px;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.level {
+    grid-area: level;
+    display: grid;
+    grid-template-columns: 1fr repeat(2, 50px);
+    grid-column-gap: 10px;
+    height: 50px;
+    padding: 10px 0;
+}
+
+.level label {
+    height: 50px;
+    line-height: 50px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.problem {
+    grid-area: problem;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 150px;
+    font-size: 55px;
+    text-align: center;
+    padding: 15px 0;
+    line-height: 120px;
+    font-weight: 900;
+}
+
+.problem .equation {
+    border: 5px solid #333;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    height: 120px;
+    line-height: 120px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.buttons {
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 10px;
+    padding-top: 20px;
+}
+
+.buttons button {
+    font-size: 50px;
+}

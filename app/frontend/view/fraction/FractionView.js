@@ -1,6 +1,6 @@
 import { importCSS, getRandomInt } from "/app/frontend/utils.js";
 
-export default class FractionView 
+export default class FractionView
 {
    #type = "+";
    #level = 1;
@@ -9,14 +9,14 @@ export default class FractionView
    #levels = ["Niveau", 1, 2];
 
    #container;
-   constructor(container) 
+   constructor(container)
    {
       importCSS("fraction");
       importCSS("buttons");
       this.#container = container;
    }
 
-   build() 
+   build()
    {
       const d = document;
       this.#container.innerHTML = "";
@@ -39,7 +39,7 @@ export default class FractionView
       level.classList.add("level");
       level.id = "level";
       this.#buildLevels(level);
-	  grid.appendChild(level);
+      grid.appendChild(level);
 
       const problem = d.createElement("div");
       problem.classList.add("problem");
@@ -57,7 +57,7 @@ export default class FractionView
       fractionPart3.id = "fractionPart3";
       fraction1.appendChild(fractionPart3);
 
-	  const problemType = d.createElement("div");
+      const problemType = d.createElement("div");
       problemType.classList.add("problemType");
       problemType.id = "problemType";
       problem.appendChild(problemType);
@@ -74,8 +74,8 @@ export default class FractionView
       fractionPart4.id = "fractionPart4";
       fraction2.appendChild(fractionPart4);
 
-	  this.#buildTypes(type, problemType);
-	  this.#buildProblem();
+      this.#buildTypes(type, problemType);
+      this.#buildProblem();
 
       const buttons = d.createElement("div");
       buttons.classList.add("buttons");
@@ -84,33 +84,33 @@ export default class FractionView
       this.#buildButtons(buttons);
    }
 
-   #buildButtons(container) 
+   #buildButtons(container)
    {
       const d = document;
 
       const button = d.createElement("button");
       button.className = "std-button std-button-blue";
       button.innerHTML = "NY OPGAVE";
-      button.addEventListener("click", () => 
+      button.addEventListener("click", () =>
       {
          this.#buildProblem();
       });
       container.appendChild(button);
    }
 
-   #buildTypes(container, problemType) 
+   #buildTypes(container, problemType)
    {
-	  const d = document;
-	  container.innerHTML = "";
+      const d = document;
+      container.innerHTML = "";
 
-      for (let t of this.#types) 
+      for (let t of this.#types)
       {
          let c = "std-button";
          c += (t == this.#type) ? " std-button-blue" : " std-button-green";
          const button = d.createElement("button");
          button.className = c;
          button.appendChild(d.createTextNode(t));
-         button.addEventListener("click", () => 
+         button.addEventListener("click", () =>
          {
             this.#type = t;
             this.#buildTypes(container, problemType);
@@ -118,31 +118,31 @@ export default class FractionView
          container.appendChild(button);
       }
 
-	  problemType.innerHTML = this.#type;
+      problemType.innerHTML = this.#type;
    }
 
-   #buildProblem() 
+   #buildProblem()
    {
       const d = document;
 
       // New numbers
       // if level is 1, then denominator is the same.
-      if (this.#level == 1) 
+      if (this.#level == 1)
       {
          let n = getRandomInt(1, 10);
          d.getElementById("fractionPart3").innerHTML = n;
          d.getElementById("fractionPart4").innerHTML = n;
       }
-      else 
+      else
       {
          let n1 = getRandomInt(1, 10);
          let n2 = getRandomInt(1, 10);
-         if (n1 == n2) 
+         if (n1 == n2)
          {
             // If the denominators are equal, start over!
             this.#buildProblem();
          }
-         else 
+         else
          {
             d.getElementById("fractionPart3").innerHTML = n1;
             d.getElementById("fractionPart4").innerHTML = n2;
@@ -153,20 +153,20 @@ export default class FractionView
       d.getElementById("fractionPart2").innerHTML = getRandomInt(1, 10);
    }
 
-   #buildLevels(container) 
+   #buildLevels(container)
    {
       const d = document;
       container.innerHTML = "";
 
-      for (let l of this.#levels) 
+      for (let l of this.#levels)
       {
-         if (l == "Niveau") 
+         if (l == "Niveau")
          {
             let label = d.createElement("label");
             label.appendChild(d.createTextNode(l));
             container.appendChild(label);
          }
-         else 
+         else
          {
             let c = "std-button";
             c += (l == this.#level) ? " std-button-red" : " std-button-orange";
@@ -175,7 +175,7 @@ export default class FractionView
             button.appendChild(d.createTextNode(l));
 
 
-            button.addEventListener("click", () => 
+            button.addEventListener("click", () =>
             {
                this.#level = l;
                this.#buildLevels(container);
