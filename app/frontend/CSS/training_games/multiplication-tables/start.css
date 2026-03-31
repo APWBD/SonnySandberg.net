@@ -1,0 +1,145 @@
+/*
+   tg = training game
+   mt = multiplication tables
+*/
+.tg-mt-startGrid
+{
+   display: grid;
+   grid-template-rows: 100px 100px minmax(250px, 485px) 100px;
+   grid-template-areas: "name"
+                        "settings"
+                        "newgame"
+                        "highscores";
+   width: calc(100vw - 30px);
+   min-width: 350px;
+   max-width: 435px;
+   height: calc(100vh - 120px);
+   min-height: 550px;
+   max-height: 785px;
+   border: 2px solid black;
+   border-radius: 10px;
+
+   justify-self: center;
+}
+
+.tg-mt-startGrid .name
+{
+   display: grid;
+   grid-area: name;
+   grid-template-rows: 50px 50px;
+   text-align: center;
+}
+
+.tg-mt-startGrid .name div:nth-child(1)
+{
+   display: grid;
+   height: 50px;
+   font-size: 25px;
+   color: black;
+   text-transform: uppercase;
+   align-content: end;
+}
+
+.tg-mt-startGrid .name div:nth-child(2)
+{
+   height: 50px;
+   line-height: 50px;
+   font-size: 40px;
+   color: black;
+}
+
+.error_flash
+{
+  animation: error_flash 0.2s linear 0.1s;
+}
+
+@keyframes error_flash
+{
+   0%   { color:red; }
+   50% { color: black; }
+   100% { color:red; }
+}
+
+.tg-mt-startGrid .settings
+{
+   display: grid;
+   grid-area: settings;
+   padding: 10px;
+}
+
+.tg-mt-startGrid .settings button
+{
+   font-size: 40px;
+   letter-spacing: 3px;
+   color: black;
+   background-color: var(--white-alpha-10);
+   border: 1px solid black;
+   border-radius: 10px;
+}
+
+.tg-mt-startGrid .settings button:hover
+{
+   background-color: var(--white-alpha-20);
+   color: black;
+   cursor: pointer;
+}
+
+.tg-mt-startGrid .newgame
+{
+   display: grid;
+   grid-area: newgame;
+   padding: 10px;
+   justify-content: center;
+   align-content: center;
+
+}
+
+.tg-mt-startGrid .newgame button
+{
+   display: grid;
+   font-size: 40px;
+   letter-spacing: 3px;
+   color: black;
+   background-color: rgba(255, 255, 0, 0.3);
+   border: 3px solid black;
+   border-radius: 50%;
+   align-content: center;
+}
+
+.tg-mt-startGrid .newgame button span
+{
+   display: block;
+   color: black;
+   font-size: 20px;
+}
+
+.tg-mt-startGrid .newgame button:hover
+{
+   background-color: var(--yellow-alpha-30);
+   color: black;
+   cursor: pointer;
+}
+
+.tg-mt-startGrid .highscores
+{
+   display: grid;
+   grid-area: highscores;
+   padding: 10px;
+}
+
+.tg-mt-startGrid .highscores button
+{
+   font-size: 40px;
+   letter-spacing: 3px;
+   color: black;
+   background-color: var(--green-alpha-20);
+   border: 1px solid black;
+   border-radius: 10px;
+}
+
+.tg-mt-startGrid .highscores button:hover
+{
+   background-color: var(--green-alpha-40);
+   color: black;
+   cursor: pointer;
+}

@@ -1,0 +1,117 @@
+/*
+   tg = training game
+   mt = multiplication tables
+*/
+.tg-mt-settingsGrid
+{
+   display: grid;
+   grid-template-rows: 100px minmax(auto, 485px) 100px;
+   grid-template-areas: "headline"
+                        "tables_select"
+                        "done";
+   width: 380px;
+   height: calc(100vh - 135px);
+   max-height: 685px;
+   justify-self: center;
+   border: 2px solid silver;
+   border-radius: 10px;
+}
+
+.tg-mt-settingsGrid .headline
+{
+   grid-area: headline;
+   color: var(--headline-color);
+   height: 100px;
+   line-height: 100px;
+   text-align: center;
+   font-size: 50px;
+   font-weight: bold;
+   text-transform: uppercase;
+}
+
+.tg-mt-settingsGrid .tables-select
+{
+   display: grid;
+   grid-area: tables_select;
+   grid-template-rows: min-content min-content;
+   grid-template-areas: "tables_select_headline"
+                        "select_tables"
+                        "num_problems";
+   padding: 20px;
+}
+
+.tg-mt-settingsGrid .tables-select > .headline
+{
+   grid-area: tables_select_headline;
+   color: white;
+   font-size: 20px;
+   font-weight: bold;
+   text-align: left;
+   height: 50px;
+   cursor: pointer;
+}
+
+.tg-mt-settingsGrid .tables-select .select
+{
+   display: grid;
+   grid-area: select_tables;
+   grid-template-columns: repeat(5, 1fr);
+   grid-auto-rows: 50px;
+}
+
+.tg-mt-settingsGrid .tables-select .select div
+{
+   display: grid;
+   grid-template-columns: 30px 40px;
+}
+
+.tg-mt-settingsGrid .tables-select .select div span
+{
+   display: grid;
+   color: var(--orange-color);
+   font-size: 20px;
+   font-weight: bold;
+   margin-top: 20px;
+   text-align: right;
+   margin-right: 2px;
+}
+
+.tg-mt-settingsGrid .tables-select .select div input
+{
+   height: 50px;
+}
+
+.tg-mt-settingsGrid .tables-select .numProblems
+{
+   display: grid;
+   padding: 10px;
+   text-align: center;
+   font-size: 30px;
+   color: var(--hufflepuff-color);
+
+}
+
+.tg-mt-settingsGrid .done
+{
+   grid-area: done;
+   display: grid;
+   padding: 10px;
+}
+
+.tg-mt-settingsGrid .done button
+{
+   width: 100%;
+   height: 80px;
+   font-size: 40px;
+   letter-spacing: 3px;
+   color: var(--white-alpha-50);
+   background-color: var(--red-alpha-50);
+   border: 1px solid var(--white-alpha-20);
+   border-radius: 10px;
+}
+
+.tg-mt-settingsGrid .done button:hover
+{
+   color: white;
+   background-color: var(--red-alpha-30);
+}

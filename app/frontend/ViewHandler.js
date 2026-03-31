@@ -4,6 +4,7 @@ import { importCSS } from "/app/frontend/utils.js";
 
 import FractionView from "/app/frontend/view/fraction/FractionView.js";
 import EquationView from "/app/frontend/view/equation/EquationView.js";
+import MultiplicationTablesView from "/app/frontend/view/training-games/multiplicationtables/View.js";
 
 export default class ViewHandler
 {
@@ -33,6 +34,15 @@ export default class ViewHandler
       {
          const equation = new EquationView(container);
          equation.build();
+      }
+
+      if (url[0] === "TrainingGame")
+      {
+         if (url[1] === "MultiplicationTable")
+         {
+            const multiplicationTable = new MultiplicationTablesView(container);
+            multiplicationTable.init();
+         }
       }
    }
 }

@@ -1,0 +1,131 @@
+/*
+   tg = training game
+   mt = multiplication tables
+*/
+.tg-mt-gameGrid
+{
+   display: grid;
+   grid-template-rows: 70px 80px 100px minmax(auto, 435px);
+   grid-template-areas: "navigation"
+                        "problem"
+                        "stats"
+                        "keys";
+   width: 380px;
+   height: calc(100vh - 135px);
+   max-height: 685px;
+   justify-self: center;
+   border: 2px solid black;
+   border-radius: 10px;
+
+   background-color: black;
+}
+
+.tg-mt-gameGrid .navigation
+{
+   display: grid;
+   grid-area: navigation;
+   grid-template-columns: 1fr 50px;
+   grid-auto-rows: 50px;
+   padding: 10px;
+}
+
+.tg-mt-gameGrid .navigation .iconDiv
+{
+    display: grid;
+    color: var(--red-alpha-40);
+    grid-column: 2 / 3;
+    width: 50px;
+    height: 50px;
+    font-size: 35px;
+    text-align: center;
+    align-content: center;
+}
+
+.tg-mt-gameGrid .navigation .iconDiv:hover
+{
+   cursor: pointer;
+   color: red;
+}
+
+.tg-mt-gameGrid .problem
+{
+   display: grid;
+   grid-area: problem;
+   height: 80px;
+   line-height: 80px;
+   font-size: 70px;
+   font-weight: bold;
+   text-align: center;
+   color: white;
+
+   border: 1px solid white;
+   border-radius: 10px;
+   margin: 0 10px;
+   background-color: #333;
+}
+
+.tg-mt-gameGrid .keys
+{
+   display: grid;
+   grid-area: keys;
+   grid-template-areas: "keyboard";
+}
+
+.tg-mt-gameGrid .keyboard
+{
+    display: grid;
+    grid-area: keyboard;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-color: none;
+    grid-gap: 8px;
+    padding: 10px;
+}
+
+.tg-mt-gameGrid .keyboard button
+{
+    cursor: pointer;
+    background-color: #333;
+    border: 1px solid #333;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+
+
+}
+
+.tg-mt-gameGrid .keyboard button:hover
+{
+    background-color: #FFFFFF33;
+}
+
+.tg-mt-gameGrid .keyboard .result
+{
+   display: grid;
+}
+
+.tg-mt-gameGrid .keyboard .result button.resultButton
+{
+   border: none;
+   color: var(--orange-color);
+   letter-spacing: 5px;
+}
+
+.tg-mt-gameGrid .stats
+{
+   grid-area: stats;
+   padding: 10px;
+}
+
+.tg-mt-gameGrid .stats .progress
+{
+   background-color: var(--green-alpha-20);
+   height: 80px;
+   line-height: 80px;
+   border: 1px solid var(--broken-white);
+   color: white;
+   font-size: 20px;
+   text-align: center;
+   overflow: hidden;
+}

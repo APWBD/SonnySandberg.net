@@ -1,5 +1,4 @@
-:root
-{
+:root {
    --gryffindor-color: #f9272e;
    --ravenclaw-color: #6c8bd1;
    --hufflepuff-color: #f7f16b;
@@ -77,28 +76,24 @@
    --fieldset-border: var(--border-color);
 }
 
-button:hover
-{
+button:hover {
    cursor: pointer;
 }
 
 input,
 select,
-textarea
-{
+textarea {
    font-size: var(--input-text-size);
    padding: 5px;
    border: 1px solid var(--border-color);
 }
 
-label
-{
+label {
    font-size: var(--label-text-size);
    line-height: var(--grid-row-height);
 }
 
-*
-{
+* {
    padding: 0;
    margin: 0;
    font-family: "Roboto", "Arial", sans-serif;
@@ -106,39 +101,29 @@ label
    outline: none;
 }
 
-html
-{
-   height: 100vh;
-   background-color: #FCF8F2;
+html {
+   background-image:
+      url("/app/frontend/images/cover.png");
+
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
 }
 
-@media (min-width: 1400px)
-{
-   html
-   {
-      background-image:
-         url("/app/frontend/images/cover.png");
-
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-   }
-}
-
-body
-{
+body {
    display: grid;
-   grid-template-columns: 1fr;
-   grid-template-rows: 60px min-content 1fr;
-   grid-template-areas: "topBar"
-      "searchResults"
-      "main";
+   height: 100vh;
+   width: 100vw;
+}
+
+.main {
+   width: 100%;
    height: 100%;
 }
 
-.main
+#content 
 {
-   grid-area: main;
    display: grid;
-   grid-template-columns: min-content 1fr;
+   height: 100%;
+   align-content: center;
 }
