@@ -12,7 +12,17 @@ export default class Settings
          '7': true,
          '8': true,
          '9': true,
-         '10': true
+         '10': true,
+         '11': false,
+         '12': false,
+         '13': false,
+         '14': false,
+         '15': false,
+         '16': false,
+         '17': false,
+         '18': false,
+         '19': false,
+         '20': false
       }
 
       this.keyboard = 2;
@@ -25,35 +35,22 @@ export default class Settings
 
    toggleAll()
    {
-      for (let i = 1; i <= 10; i++)
+      const count = Object.keys(this.tables).length;
+
+      for (let i = 1; i <= count; i++)
       {
          this.tables[i] = true;
       }
    }
 
+   // This function calculates the number of problems based on the number of tables selected.
+   getProblemCount(n)
+   {
+      return Math.pow(n, 2);
+   }
+
    getNumberOfProblems()
    {
-      let problems =
-      {
-         '0': 0,
-         '1': 19,
-         '2': 36,
-         '3': 51,
-         '4': 64,
-         '5': 75,
-         '6': 84,
-         '7': 91,
-         '8': 96,
-         '9': 99,
-         '10': 100
-      }
-
-      let count = 0;
-      for (let i = 1; i <= 10; i++)
-      {
-         if(this.tables[i]) count++;
-      }
-
-      return problems[count];
+      return this.getProblemCount(Object.values(this.tables).filter(v => v).length);
    }
 }

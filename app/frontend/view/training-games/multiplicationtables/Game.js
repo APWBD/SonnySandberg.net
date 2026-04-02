@@ -45,43 +45,22 @@ export default class MultiplicationTablesGame
 
    #generateProblems(settings)
    {
-      const values = Array();
-      const array = Array(10);
-      for (let i = 0; i < 10; i++)
-      {
-         array[i] = Array(10);
-      }
+      const tables = Object.entries(settings.tables)
+         .filter(([_, v]) => v)
+         .map(([k]) => Number(k));
 
-      for (let x = 1; x <= 10; x++)
+      let problems = [];
+
+      for (let a of tables)
       {
-         if (settings.tables[x] == true)
+         for (let b of tables)
          {
-            values[x] = x;
+            problems.push([a, b]);
          }
       }
 
-      for (let v of values)
-      {
-         if (v !== undefined)
-         {
-            for (let i = 1; i <= 10; i++)
-            {
-               array[i-1][v-1] = [i, v];
-               if (v != i) array[v-1][i-1] = [v, i];
-            }
-         }
-      }
-
-      // Now we have all valid problems, let put them into a problems array and shuffle them
-      for (let x of array)
-      {
-         for (let y of x)
-         {
-            if (y !== undefined) this.allProblems.push(y);
-         }
-      }
-
-      this.allProblems.sort(() => Math.random() - 0.5); // Shuffle the array
+      problems.sort(() => Math.random() - 0.5); // Shuffle the array
+      this.allProblems = problems;
       this.numProblems = this.allProblems.length;
    }
 
@@ -123,13 +102,20 @@ export default class MultiplicationTablesGame
    {
       return new Promise(resolve =>
       {
-         this.results = Array();
-         for (let i = 1; i <= 10; i++)
+         const tables = Object.entries(this.settings.tables)
+            .filter(([_, v]) => v)
+            .map(([k]) => Number(k));
+
+         this.results = [];
+         this.numProblems = 0;
+
+         for (let i = 0; i < tables.length; i++)
          {
-            this.results[i-1] = Array();
-            for (let j = 1; j <= 10; j++)
+            this.results[i] = [];
+
+            for (let j = 0; j < tables.length; j++)
             {
-               this.results[i-1][j-1] = 0;
+               this.results[i][j] = 0;
                this.numProblems++;
             }
          }
@@ -162,7 +148,7 @@ export default class MultiplicationTablesGame
          {
             if (p == r)
             {
-               this.results[this.currentProblem[0]-1][this.currentProblem[1]-1];
+               this.results[this.currentProblem[0] - 1][this.currentProblem[1] - 1];
                this.currentProblem
                toReturn = "correct";
                this.correct++;
@@ -200,9 +186,9 @@ export default class MultiplicationTablesGame
    {
       const date = new Date(this.time * 1000);
       let all = date.toISOString().slice(11, 19);
-      let h = parseInt(all.slice(0,2));
-      let m = parseInt(all.slice(3,5));
-      let s = parseInt(all.slice(6,8));
+      let h = parseInt(all.slice(0, 2));
+      let m = parseInt(all.slice(3, 5));
+      let s = parseInt(all.slice(6, 8));
 
       return [h, m, s];
    }

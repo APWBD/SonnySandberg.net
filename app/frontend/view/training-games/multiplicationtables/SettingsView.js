@@ -52,8 +52,8 @@ export default class MultiplicationTablesSettingsView
 
       const headline = d.createElement("div");
          headline.className = "headline";
-         headline.appendChild(d.createTextNode("Choose tables"));
-         headline.title = "Click to choose all tables";
+         headline.appendChild(d.createTextNode("Vælg tabeller"));
+         headline.title = "Klik her for at vælge alle tabeller";
          headline.addEventListener("click", () =>
          {
             settings.toggleAll();
@@ -66,7 +66,7 @@ export default class MultiplicationTablesSettingsView
       container.appendChild(tables);
 
          const selectedTables = settings.tables;
-         for (let i = 1; i <= 10; i++)
+         for (let i = 1; i <= 20; i++)
          {
             const div = d.createElement("div");
 
@@ -107,7 +107,7 @@ export default class MultiplicationTablesSettingsView
 
       const div = d.createElement("div");
          div.className = "numProblems";
-         div.appendChild(d.createTextNode(settings.getNumberOfProblems() + " selected problems"));
+         div.appendChild(d.createTextNode(settings.getNumberOfProblems() + " valgte opgaver"));
       container.appendChild(div);
    }
 }
