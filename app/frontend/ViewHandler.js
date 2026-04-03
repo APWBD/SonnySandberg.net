@@ -25,7 +25,7 @@ export default class ViewHandler
       const url = getUrlParts();
       window.document.title = `${config.getTitle()}`;
 
-      if (url[0] === "brøkgenerator")
+      if (url[0] === "broekgenerator")
       {
          const fraction = new FractionView(container);
          fraction.build();
