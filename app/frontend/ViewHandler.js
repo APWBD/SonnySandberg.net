@@ -13,6 +13,7 @@ export default class ViewHandler
       const d = document;
 
       importCSS("main");
+      importCSS("menu");
 
       // Content
       const content = d.getElementById("content"); // Our content div that will change
@@ -24,25 +25,27 @@ export default class ViewHandler
       const url = getUrlParts();
       window.document.title = `${config.getTitle()}`;
 
-      if (url[0] === "Fraction")
+      if (url[0] === "brøkgenerator")
       {
          const fraction = new FractionView(container);
          fraction.build();
       }
 
-      if (url[0] === "Equation")
+      if (url[0] === "ligningsgenerator")
       {
          const equation = new EquationView(container);
          equation.build();
       }
 
-      if (url[0] === "TrainingGame")
+      if (url[0] === "reduktionsvaerktoej")
       {
-         if (url[1] === "MultiplicationTable")
-         {
-            const multiplicationTable = new MultiplicationTablesView(container);
-            multiplicationTable.init();
-         }
+         // Add your Reduktionsværktøj view initialization here
+      }
+
+      if (url[0] === "multiplikationstabel")
+      {
+         const multiplicationTable = new MultiplicationTablesView(container);
+         multiplicationTable.init();
       }
    }
 }
