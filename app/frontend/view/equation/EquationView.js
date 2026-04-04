@@ -85,16 +85,20 @@ export default class EquationView
 		this.#buttonsContainer.appendChild(newProblem);
 
 		const showAnswer = d.createElement("button");
+		const showSteps = d.createElement("button");
+
 		showAnswer.className = "std-button std-button-green";
 		showAnswer.innerHTML = "Vis svar";
 		this.#buttonsContainer.appendChild(showAnswer);
 		showAnswer.addEventListener("click", e =>
 		{
+			showSteps.innerHTML = "Hjælp";
 			this.#showingAnswer = !this.#showingAnswer;
 			if (this.#showingAnswer)
 			{
 				this.#answerContainer.style.display = "block";
 				this.#stepsContainer.style.display = "none";
+				this.#showingSteps = false;
 				showAnswer.innerHTML = "Skjul svar";
 			}
 			else
@@ -103,8 +107,7 @@ export default class EquationView
 				showAnswer.innerHTML = "Vis svar";
 			}
 		});
-
-		const showSteps = d.createElement("button");
+		
 		showSteps.className = "std-button std-button-red";
 		showSteps.innerHTML = "Hjælp";
 		this.#buttonsContainer.appendChild(showSteps);
@@ -115,6 +118,8 @@ export default class EquationView
 			{
 				this.#stepsContainer.style.display = "block";
 				this.#answerContainer.style.display = "none";
+				this.#showingAnswer = false;
+				showAnswer.innerHTML = "Vis svar";
 				showSteps.innerHTML = "Skjul hjælp";
 			}
 			else
