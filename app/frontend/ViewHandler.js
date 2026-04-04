@@ -4,6 +4,7 @@ import { importCSS } from "/app/frontend/utils.js";
 
 import FractionView from "/app/frontend/view/fraction/FractionView.js";
 import EquationView from "/app/frontend/view/equation/EquationView.js";
+import ReductionView from "/app/frontend/view/reduction/ReductionView.js";
 import MultiplicationTablesView from "/app/frontend/view/training-games/multiplicationtables/View.js";
 
 export default class ViewHandler
@@ -39,7 +40,7 @@ export default class ViewHandler
 
       if (url[0] === "reduktionsvaerktoej")
       {
-         // Add your Reduktionsværktøj view initialization here
+         const reduction = new ReductionView(container);
       }
 
       if (url[0] === "multiplikationstabel")
