@@ -2,7 +2,7 @@ import { getUrlParts } from "/app/frontend/utils.js";
 import { config } from "/app/frontend/config.js";
 import { importCSS } from "/app/frontend/utils.js";
 import TopMenuView from "/app/frontend/view/menu/TopMenuView.js";
-
+import HomeView from "/app/frontend/view/home/HomeView.js";
 import FractionView from "/app/frontend/view/fraction/FractionView.js";
 import EquationView from "/app/frontend/view/equation/EquationView.js";
 import ReductionView from "/app/frontend/view/reduction/ReductionView.js";
@@ -30,6 +30,12 @@ export default class ViewHandler
    {
       const url = getUrlParts();
       window.document.title = `${config.getTitle()}`;
+
+      if (url.length === 0 || url[0] === "")
+      {
+         const home = new HomeView(container);
+         home.build();
+      }
 
       if (url[0] === "broekgenerator")
       {
