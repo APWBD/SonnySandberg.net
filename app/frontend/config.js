@@ -34,9 +34,25 @@ export const config =
          ["C", 0]]
    },
    menuItems: [
-      { name: "Brøkopgaver", href: "/broekgenerator/" },
-      { name: "Ligningsopgaver", href: "/ligningsgenerator/" },
-      { name: "Reduktionsopgaver", href: "/reduktionsvaerktoej/" },
-      { name: "Træn multiplikationstabeller", href: "/multiplikationstabel/" }
+      { name: "Brøkopgaver", 
+         href: "/broekgenerator/", 
+         description: "Generér brøker og træn dine færdigheder inden for brøkregning.",
+         icon: "¼"
+      },
+      { name: "Ligningsopgaver", 
+         href: "/ligningsgenerator/", 
+         description: "Lav ligninger til træning i ligningsløsning på forskellige niveauer.",
+         icon: "x = ?"
+      },
+      { name: "Reduktionsopgaver", 
+         href: "/reduktionsvaerktoej/", 
+         description: "Øv dig i at reducere matematiske udtryk på en enkel måde.",
+         icon: "(a+b)"
+      },
+      { name: "Træn multiplikationstabeller", 
+         href: "/multiplikationstabel/", 
+         description: "Træn tabeller ved at vælge dem, du vil øve, og starte spillet.",
+         icon: "×"
+      }
    ]
 }
