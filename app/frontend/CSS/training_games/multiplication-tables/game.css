@@ -2,14 +2,13 @@
    tg = training game
    mt = multiplication tables
 */
-.tg-mt-gameGrid
-{
+.tg-mt-gameGrid {
    display: grid;
    grid-template-rows: 70px 80px 100px minmax(auto, 435px);
    grid-template-areas: "navigation"
-                        "problem"
-                        "stats"
-                        "keys";
+      "problem"
+      "stats"
+      "keys";
    width: 380px;
    height: calc(100vh - 135px);
    max-height: 685px;
@@ -17,11 +16,17 @@
    border: 2px solid black;
    border-radius: 10px;
 
-   background-color: black;
+   background: linear-gradient(180deg,
+         #5c6773 0%,
+         #2b3138 100%);
+
+   box-shadow:
+      inset 0 4px 10px rgba(0, 0, 0, 0.5);
+
+   margin-top: 20px;
 }
 
-.tg-mt-gameGrid .navigation
-{
+.tg-mt-gameGrid .navigation {
    display: grid;
    grid-area: navigation;
    grid-template-columns: 1fr 50px;
@@ -29,26 +34,20 @@
    padding: 10px;
 }
 
-.tg-mt-gameGrid .navigation .iconDiv
-{
-    display: grid;
-    color: var(--red-alpha-40);
-    grid-column: 2 / 3;
-    width: 50px;
-    height: 50px;
-    font-size: 35px;
-    text-align: center;
-    align-content: center;
+.tg-mt-gameGrid .navigation .iconDiv {
+   display: grid;
+   grid-column: 2 / 3;
+   width: 50px;
+   height: 50px;
+
+   img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+   }
 }
 
-.tg-mt-gameGrid .navigation .iconDiv:hover
-{
-   cursor: pointer;
-   color: red;
-}
-
-.tg-mt-gameGrid .problem
-{
+.tg-mt-gameGrid .problem {
    display: grid;
    grid-area: problem;
    height: 80px;
@@ -64,68 +63,89 @@
    background-color: #333;
 }
 
-.tg-mt-gameGrid .keys
-{
+.tg-mt-gameGrid .keys {
    display: grid;
    grid-area: keys;
    grid-template-areas: "keyboard";
 }
 
-.tg-mt-gameGrid .keyboard
-{
-    display: grid;
-    grid-area: keyboard;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    background-color: none;
-    grid-gap: 8px;
-    padding: 10px;
+.tg-mt-gameGrid .keyboard {
+   display: grid;
+   grid-area: keyboard;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(4, 1fr);
+   background-color: none;
+   grid-gap: 8px;
+   padding: 10px;
 }
 
-.tg-mt-gameGrid .keyboard button
-{
-    cursor: pointer;
-    background-color: #333;
-    border: 1px solid #333;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    font-size: 30px;
+.tg-mt-gameGrid .keyboard button {
+   background: linear-gradient(180deg,
+         #7f8c99 0%,
+         #5f6b78 45%,
+         #3f4954 100%);
 
+   border-radius: 8px;
+   box-shadow:
+      inset 0 2px 3px rgba(255, 255, 255, 0.15),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.5),
+      0 3px 6px rgba(0, 0, 0, 0.4);
+   color: #fff;
+   font-size: 25px;
 
+   &:active {
+      transform: translateY(2px);
+
+      box-shadow:
+         inset 0 3px 6px rgba(0, 0, 0, 0.6),
+         inset 0 -1px 2px rgba(255, 255, 255, 0.1);
+   }
+
+   &:hover {
+      background: linear-gradient(180deg,
+            #7b8896 0%,
+            #5f6b78 50%,
+            #47515c 100%);
+   }
 }
 
-.tg-mt-gameGrid .keyboard button:hover
-{
-    background-color: #FFFFFF33;
+.tg-mt-gameGrid .keyboard button:hover {
+   background-color: #FFFFFF33;
 }
 
-.tg-mt-gameGrid .keyboard .result
-{
+.tg-mt-gameGrid .keyboard .result {
    display: grid;
 }
 
-.tg-mt-gameGrid .keyboard .result button.resultButton
-{
+.tg-mt-gameGrid .keyboard .result button.resultButton {
    border: none;
    color: var(--orange-color);
    letter-spacing: 5px;
 }
 
-.tg-mt-gameGrid .stats
-{
+.tg-mt-gameGrid .stats {
    grid-area: stats;
    padding: 10px;
 }
 
-.tg-mt-gameGrid .stats .progress
-{
-   background-color: var(--green-alpha-20);
+.tg-mt-gameGrid .stats .progress {
+   
    height: 80px;
    line-height: 80px;
    border: 1px solid var(--broken-white);
+   border-radius: 10px;
    color: white;
    font-size: 20px;
    text-align: center;
    overflow: hidden;
+
+   background: linear-gradient(
+    180deg,
+    #5aa06a 0%,
+    #3f7d4f 100%
+  );
+
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.2),
+    inset 0 -3px 6px rgba(0,0,0,0.4);
 }

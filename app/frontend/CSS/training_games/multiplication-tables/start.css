@@ -18,10 +18,10 @@
    max-height: 785px;
    border: 2px solid black;
    border-radius: 10px;
-
    justify-self: center;
-
    background-color: black;
+
+   margin-top: 20px;
 }
 
 .tg-mt-startGrid .name

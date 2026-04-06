@@ -70,10 +70,10 @@ export default class MultiplicationTablesGameView
                });
             navDiv.appendChild(exit);
 
-               const exitIcon = d.createElement("i");
-                  exitIcon.className = "fi-xnsuxl-sign-out-solid exit";
-               exit.appendChild(exitIcon);
-               friconix_update();
+               const exitImg = d.createElement("img");
+                  exitImg.src = "/app/frontend/images/exit-icon.png";
+                  exitImg.alt = "Exit game";
+               exit.appendChild(exitImg);
 
          this.#problemDiv = d.createElement("div");
             this.#problemDiv.className = "problem";
