@@ -1,6 +1,6 @@
 export const config =
 {
-   site_name: "Sonny Sandberg . net",
+   site_name: "Sonny Sandberg.net",
    site_version: "0.1.1.1",
    entry: "app/frontend/js/main.js",
    api_path: "https://sonnysandberg.net/apicall/",
@@ -12,7 +12,7 @@ export const config =
    slogan: "",
    getTitle: function ()
    {
-      return `${this.site_name} | ${this.slogan}`;
+      return `${this.site_name}`;
    },
    user_roles: {
       USER: 1,

@@ -10,13 +10,13 @@ export default class TopMenuView
 
         const img = d.createElement("img");
         img.src = "/app/frontend/images/coo.ico";
-        img.alt = "Gå til forsiden af Sonny Sandberg.net";
+        img.alt = `Gå til forsiden af ${config.site_name}`;
         img.addEventListener("click", () => goTo("/"));
         container.appendChild(img);
 
         const div = d.createElement("div");
-        div.textContent = "Sonny Sandberg.net";
-        div.title = "Gå til forsiden af Sonny Sandberg.net";
+        div.textContent = config.site_name;
+        div.title = `Gå til forsiden af ${config.site_name}`;
         div.addEventListener("click", () => goTo("/"));
         container.appendChild(div);
 
