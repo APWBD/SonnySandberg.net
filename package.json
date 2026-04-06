@@ -9,7 +9,7 @@
     "globals": "^17.4.0"
   },
   "name": "sonnysandberg.net",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "",
   "main": "index.js",
   "dependencies": {
