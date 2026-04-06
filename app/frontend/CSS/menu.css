@@ -17,6 +17,10 @@
 		height: 40px;
 		align-self: center;
 		justify-self: center;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 
 	div {
@@ -25,6 +29,11 @@
 		font-size: 30px;
 		font-weight: bold;
 		color: #0f172a;
+
+		&:hover {
+			color: #334155;
+			cursor: pointer;
+		}
 	}
 }
 
