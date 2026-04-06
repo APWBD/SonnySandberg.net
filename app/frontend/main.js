@@ -5,5 +5,3 @@ window.document.title = `${config.getTitle()}`;
 
 const viewHandler = new ViewHandler();
 viewHandler.init();
-
-friconix_update();
