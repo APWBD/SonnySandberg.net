@@ -52,6 +52,7 @@ export default class ViewHandler
       if (url[0] === "reduktionsvaerktoej")
       {
          const reduction = new ReductionView(container);
+         reduction.build();
       }
 
       if (url[0] === "multiplikationstabel")

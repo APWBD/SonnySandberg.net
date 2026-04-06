@@ -1,0 +1,117 @@
+@scope (.reduction) {
+	:scope {
+		display: grid;
+	}
+}
+
+.grid {
+	display: grid;
+	grid-template-rows: 100px min-content;
+	grid-template-columns: 1fr;
+	grid-template-areas: "headline"
+		"box";
+	align-self: start;
+	margin-top: 25px;
+
+	.headline {
+		grid-area: headline;
+		height: 100px;
+		line-height: 100px;
+		font-size: 40px;
+		font-weight: bold;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+	}
+
+	.box {
+		grid-area: box;
+		display: grid;
+		grid-template-rows: 50px 1fr min-content min-content 60px;
+		grid-template-areas: "level"
+			"problem"
+			"answer"
+			"steps"
+			"buttons";
+		width: 800px;
+		border: 2px solid #333;
+		border-radius: 10px;
+		padding: 10px;
+		justify-self: center;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+
+		.level {
+			grid-area: level;
+			display: grid;
+			grid-template-columns: 1fr repeat(1, 50px);
+			grid-column-gap: 10px;
+			height: 50px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid #999;
+
+		}
+
+		.level label {
+			height: 50px;
+			line-height: 50px;
+			font-size: 30px;
+			font-weight: bold;
+		}
+
+		.problem {
+			grid-area: problem;
+			display: grid;
+			height: 70px;
+			font-size: 30px;
+			text-align: center;
+			padding: 10px 0 0 0;
+			line-height: 70px;
+			font-weight: 600;
+		}
+
+		.answer {
+			grid-area: answer;
+			display: none;
+			font-size: 30px;
+			text-align: center;
+			border-top: 1px solid #999;
+			background-color: rgba(100, 255, 100, 0.3);
+			color: green;
+			font-weight: 600;
+			height: 60px;
+			line-height: 60px;
+		}
+
+		.steps {
+			grid-area: steps;
+			display: none;
+			font-size: 20px;
+			border-top: 1px solid #999;
+			background-color: rgba(255, 200, 255, 0.5);
+			color: purple;
+			padding: 20px 0 10px 50px;
+
+			li {
+				margin-bottom: 10px;
+
+				&::marker {
+					font-weight: bold;
+					color: black
+				}
+			}
+		}
+
+		.buttons {
+			grid-area: buttons;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-column-gap: 10px;
+			border-top: 1px solid #999;
+			padding-top: 10px;
+		}
+
+		.buttons button {
+			font-size: 20px;
+		}
+	}
+}
