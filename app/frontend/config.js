@@ -10,7 +10,7 @@ export const config =
    charset: "UTF-8",
    language: "dk",
    slogan: "",
-   getTitle: function()
+   getTitle: function ()
    {
       return `${this.site_name} | ${this.slogan}`;
    },
@@ -32,5 +32,11 @@ export const config =
          [4, 5, 6],
          [7, 8, 9],
          ["C", 0]]
-   }
+   },
+   menuItems: [
+      { name: "Brøkopgaver", href: "/broekgenerator/" },
+      { name: "Ligningsopgaver", href: "/ligningsgenerator/" },
+      { name: "Reduktionsopgaver", href: "/reduktionsvaerktoej/" },
+      { name: "Træn multiplikationstabeller", href: "/multiplikationstabel/" }
+   ]
 }

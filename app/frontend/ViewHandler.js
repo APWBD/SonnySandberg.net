@@ -1,6 +1,7 @@
 import { getUrlParts } from "/app/frontend/utils.js";
 import { config } from "/app/frontend/config.js";
 import { importCSS } from "/app/frontend/utils.js";
+import TopMenuView from "/app/frontend/view/menu/TopMenuView.js";
 
 import FractionView from "/app/frontend/view/fraction/FractionView.js";
 import EquationView from "/app/frontend/view/equation/EquationView.js";
@@ -15,6 +16,10 @@ export default class ViewHandler
 
       importCSS("main");
       importCSS("menu");
+
+      const topBar = d.getElementById("topBar"); // Our topbar that will always be the same
+      const topMenu = new TopMenuView();
+      topMenu.build(topBar);
 
       // Content
       const content = d.getElementById("content"); // Our content div that will change
