@@ -137,21 +137,29 @@ export default class MultiplicationTablesGame
    {
       return new Promise(resolve =>
       {
-         let p = (this.currentProblem[0] * this.currentProblem[1]);
+         let p = this.currentProblem[0] * this.currentProblem[1];
          let r = parseInt(result);
 
          let lengthP = this.#howManyDigitsInNumber(p);
          let lengthR = this.#howManyDigitsInNumber(r);
 
+         const tables = Object.entries(this.settings.tables)
+            .filter(([_, v]) => v)
+            .map(([k]) => Number(k));
+
+         const row = tables.indexOf(this.currentProblem[0]);
+         const col = tables.indexOf(this.currentProblem[1]);
+
          let toReturn = "nothing";
+
          if (lengthP === lengthR)
          {
             if (p == r)
             {
-               this.results[this.currentProblem[0] - 1][this.currentProblem[1] - 1];
-               this.currentProblem
+               this.results[row][col] = 1;
                toReturn = "correct";
                this.correct++;
+
                if (this.correct == this.numProblems)
                {
                   this.gameState = 2;
