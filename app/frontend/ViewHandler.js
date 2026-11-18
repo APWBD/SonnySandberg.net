@@ -7,6 +7,7 @@ import FractionView from "/app/frontend/view/fraction/FractionView.js";
 import EquationView from "/app/frontend/view/equation/EquationView.js";
 import ReductionView from "/app/frontend/view/reduction/ReductionView.js";
 import MultiplicationTablesView from "/app/frontend/view/training-games/multiplicationtables/View.js";
+import GuessSongGameView from "/app/frontend/view/guess-translation/GuessSongGameView.js"
 
 export default class ViewHandler
 {
@@ -59,6 +60,12 @@ export default class ViewHandler
       {
          const multiplicationTable = new MultiplicationTablesView(container);
          multiplicationTable.init();
+      }
+
+      if (url[0] === "guesssonggame")
+      {
+         const guess = new GuessSongGameView(container);
+         guess.render();
       }
    }
 }

@@ -1,0 +1,74 @@
+@scope (.guesssonggame) {
+   :scope {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+      height: calc(100vh - 200px);
+      width: calc(100vw - 100px);
+      margin: 50px;
+      justify-items: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+      grid-template-rows: min-content min-content min-content 1fr;
+   }
+
+   .original-line {
+      font-weight: bold;
+      font-size: 30px;
+      color: #333;
+   }
+
+   h1
+   {
+      font-size: 60px;
+      font-weight: bold;
+      padding: 20px;
+   }
+
+   .translated-line {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 40px;
+      padding: 10px;
+   }
+
+   .answer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "title group"
+                           "artist artist"
+                           "video video";
+      width: min(100%, (100dvh - 600px) * 16 / 9);
+      margin: 25px auto;
+      font-size: 20px;
+
+      .video
+      {
+         grid-area: video;
+      }
+
+      .title
+      {
+         grid-area: title;
+         font-weight: bold;
+         font-size: 30px;
+      }
+
+      .group
+      {
+         grid-area: group;
+         text-align: right;
+         padding-right: 10px;
+      }
+
+      .artist
+      {
+         grid-area: artist;
+         font-weight: italic;
+         font-size: 20px;
+         color: #666;
+      }
+   }
+}

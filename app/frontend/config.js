@@ -53,6 +53,26 @@ export const config =
          href: "/multiplikationstabel/", 
          description: "Træn tabeller ved at vælge dem, du vil øve, og starte spillet.",
          icon: "×"
+      },
+      { name: "Additionsopgaver", 
+         href: "/addition/", 
+         description: "Træn addition ved at løse forskellige opgaver.",
+         icon: "a + b"
+      },
+      { name: "Subtraktionsopgaver", 
+         href: "/subtraction/", 
+         description: "Træn subtraktion ved at løse forskellige opgaver.",
+         icon: "a − b"
+      },
+      { name: "Multiplikationsopgaver", 
+         href: "/multiplication/", 
+         description: "Træn multiplikation ved at løse forskellige opgaver.",
+         icon: "a × b"
+      },
+      { name: "Divisionsopgaver", 
+         href: "/division/", 
+         description: "Træn division ved at løse forskellige opgaver.",
+         icon: "a ÷ b"
       }
    ]
 }
