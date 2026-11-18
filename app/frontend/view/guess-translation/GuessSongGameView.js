@@ -47,14 +47,23 @@ export default class GuessSongGameView
             case "v":
                this.#revealAnswer = true;
                this.render();
-               if (this.#activeSong)
+               break;
+            case " ":
+               if (this.#revealAnswer)   
                {
-                  const videoUrl = this.#activeSong.video || this.#activeSong.videoUrl || this.#activeSong.url;
-                  if (videoUrl)
-                  {
-                     window.open(videoUrl, "_blank", "noopener,noreferrer");
-                  }
+                  this.getNextSong();
+                  this.#revealOriginalLine = false;
+                  this.#revealAnswer = false;
                }
+               else if (!this.#revealOriginalLine)
+               {
+                  this.#revealOriginalLine = true;
+               }
+               else if (this.#revealOriginalLine && !this.#revealAnswer)
+               {
+                  this.#revealAnswer = true;
+               }
+               this.render();
                break;
          }
       });
